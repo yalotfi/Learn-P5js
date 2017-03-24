@@ -9,6 +9,6 @@ function Box(xPos, yPos, radius) {
 
   this.update = function() {
     this.xPos = this.xPos;
-    this.yPos = this.yPos;
+    this.yPos++;
   }
 }

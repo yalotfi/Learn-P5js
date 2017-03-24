@@ -5,8 +5,25 @@ var userRadius = 24;  // Radius of Shapes
 
 function setup() {
   var canvasObj = createCanvas(600, 400);
-  for (var i=0; i < crowdSize; i++) {
-    bubbles.push(new Bubble(random(width), random(height), userRadius));
+  infinity = 0;
+  while (bubbles.length < crowdSize) {
+    var overlap = false;
+    var tempB = new Bubble(random(width), random(height), userRadius);
+
+    for (var j=0; j < bubbles.length; j++) {
+      if (tempB.intersects(bubbles[j])) {
+        overlap = true;
+      }
+    }
+
+    if (!overlap) {
+      bubbles.push(tempB);
+    }
+
+    infinity++;
+    if (infinity > 1000) {
+      break;
+    }
   }
 }
 
