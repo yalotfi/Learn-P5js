@@ -1,27 +1,33 @@
 // Bubble Constructor
-function Bubble(xPos, yPos) {
-	this.xPos = xPos;
-	this.yPos = yPos;
-	this.wVal = 48;
-	this.hVal = 48;
-	this.colorVal = color(255, 0, 200);
-	this.clickFlag = 0;
+function Bubble(x, y, r) {
+	this.xPos = x;  // Random X coordinate
+	this.yPos = y;  // Random Y coordinate
+	this.radius = r;  // Radius Default
+	this.colorVal = color(255, 0, 200);  // Purple-Pink Default
 
-	// Method to display the bubble
+	// Display the bubble
 	this.display = function() {
 		fill(this.colorVal);
-		ellipse(this.xPos, this.yPos, this.wVal, this.hVal);
+		ellipse(this.xPos, this.yPos, this.radius * 2, this.radius * 2);
 	}
 
-	// Method to move the bubble's position
+	// Randomly move the bubble's position
 	this.update = function() {
 		this.xPos += random(-1,1);
 		this.yPos += random(-1,1);
 	}
 
+	// Check the distance between the mouse coordinates and Bubble center
 	this.distFromMouse = function() {
-		var radius = this.wVal / 2;
 		var distance = dist(mouseX, mouseY, this.xPos, this.yPos);
-		return (distance < radius) ? true : false;
+		return (distance < this.radius) ? true : false;
+	}
+
+	// Check intersection between to Bubble objects
+	this.intersects = function(other) {
+		var thisRadius =  this.radius * 2;
+		var otherRadius = other.radius * 2;
+		var distance = dist(this.xPos, this.yPos, other.xPos, other.yPos);
+		return (distance < thisRadius + otherRadius) ? true : false;
 	}
 }
