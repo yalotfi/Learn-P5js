@@ -4,7 +4,7 @@ function Bubble(xPos, yPos) {
 	this.yPos = yPos;
 	this.wVal = 48;
 	this.hVal = 48;
-	this.colorVal = color(255, 150);
+	this.colorVal = color(255, 0, 200);
 	this.clickFlag = 0;
 
 	// Method to display the bubble
@@ -19,13 +19,9 @@ function Bubble(xPos, yPos) {
 		this.yPos += random(-1,1);
 	}
 
-	// Method to switch the bubble's color
-	this.switchColor = function() {
-		this.clickFlag += 1;
-		if (this.clickFlag % 2 === 0) {
-			this.colorVal = color(255, 150);
-		} else {
-			this.colorVal = color(255, 0, 200);
-		}
+	this.distFromMouse = function() {
+		var radius = this.wVal / 2;
+		var distance = dist(mouseX, mouseY, this.xPos, this.yPos);
+		return (distance < radius) ? true : false;
 	}
 }

@@ -24,26 +24,14 @@ function draw() {
 }
 
 function mousePressed() {
-  for (var i=0; i < bubbles.length; i++) {
-    bubbles[i].switchColor();
-  }
-  checkBox();
+  boxify();
 }
 
-function checkBox() {
-  /*
-  **
-  Better check for radius
-  **
-  */
+function boxify() {
   for (var i=bubbles.length - 1; i >= 0; i--) {
-    var xPos = bubbles[i].xPos;
-    var yPos = bubbles[i].yPos;
-    var distance = dist(xPos, yPos, mouseX, mouseY);
-    if (distance < xPos / 2) {
+    if (bubbles[i].distFromMouse()) {
+      boxes.push(new Box(bubbles[i].xPos, bubbles[i].yPos));
       bubbles.splice(i, 1);
-      boxes.push(new Box(xPos, yPos));
-      console.log('Boxified!');
     }
   }
 }
