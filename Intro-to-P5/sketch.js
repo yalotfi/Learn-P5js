@@ -1,6 +1,6 @@
 var bubbles = [];  // Array of bubbles
 var boxes = [];  // Array of Boxes
-var crowdSize = 5;  // Starting population
+var crowdSize = 15;  // Starting population
 var userRadius = 24;  // Radius of Shapes
 
 function setup() {
@@ -34,7 +34,8 @@ function draw() {
     bubbles[i].update();
     for (var j=0; j < bubbles.length; j++) {
       if (i !== j && bubbles[i].intersects(bubbles[j])) {
-        // console.log('Bubble ' + i + ' intersects Bubble ' + j);
+        bubbles[i].changeColor();
+        bubbles[j].changeColor();
       }
     }
   }

@@ -23,11 +23,13 @@ function Bubble(x, y, r) {
 		return (distance < this.radius) ? true : false;
 	}
 
+	this.changeColor = function() {
+		this.colorVal = color(255, 100);
+	}
+
 	// Check intersection between to Bubble objects
 	this.intersects = function(other) {
-		var thisRadius =  this.radius * 2;
-		var otherRadius = other.radius * 2;
 		var distance = dist(this.xPos, this.yPos, other.xPos, other.yPos);
-		return (distance < thisRadius + otherRadius) ? true : false;
+		return (distance < this.radius + other.radius) ? true : false;
 	}
 }
