@@ -2,9 +2,10 @@ var bubbles = [];  // Array of bubbles
 var boxes = [];  // Array of Boxes
 var crowdSize = 15;  // Starting population
 var userRadius = 24;  // Radius of Shapes
+var canvasObj;
 
 function setup() {
-  var canvasObj = createCanvas(600, 400);
+  canvasObj = createCanvas(600, 400);
   infinity = 0;
   while (bubbles.length < crowdSize) {
     var overlap = false;
