@@ -8,17 +8,13 @@ function Box(xPos, yPos, radius) {
   }
 
   this.checkEdge = function() {
-    if (this.yPos >= canvasObj.height) {
-      return true;
-    } else {
-      return false;
-    }
+    return (this.yPos >= height - this.radius) ? true : false;
   }
 
   this.update = function() {
     this.xPos = this.xPos;
     if (this.checkEdge()) {
-      this.yPos = canvasObj.height;
+      this.yPos = height - this.radius;
     } else {
       this.yPos += 2;
     }
