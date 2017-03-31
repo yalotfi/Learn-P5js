@@ -13,9 +13,13 @@ function Bubble(x, y, r) {
 
 	// Randomly move the bubble's position
 	this.update = function() {
-		this.xPos += random(-1,1);
-		this.yPos += random(-1,1);
+		this.xPos += random(-1.5,1.5);
+		this.yPos += random(-1.5,1.5);
 	}
+
+	// this.bounce = function() {
+	// 	if (this.xPos >)
+	// }
 
 	// Check the distance between the mouse coordinates and Bubble center
 	this.distFromMouse = function() {
