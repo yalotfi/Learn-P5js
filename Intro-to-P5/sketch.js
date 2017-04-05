@@ -1,6 +1,6 @@
 var bubbles = [];  // Array of bubbles
 var boxes = [];  // Array of Boxes
-var crowdSize = 21;  // Starting population
+var crowdSize = 30;  // Starting population
 var userRadius = 24;  // Radius of Shapes
 var canvasObj;
 
@@ -30,8 +30,8 @@ function draw() {
   for (var i=0; i < bubbles.length; i++) {
     bubbles[i].display();
     bubbles[i].update();
-    boxifyOnTouch();
   }
+  boxifyOnTouch();
   for (var i=0; i < boxes.length; i++) {
     boxes[i].display();
     boxes[i].update();
