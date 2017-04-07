@@ -7,8 +7,8 @@ The first example I implementeed was of a Hypotrochoid which is simply the curve
 
 This is the set of equations that describe the curve:
 
-![Parametric Equations](HypotrochoidEquations.PNG)
+![Parametric Equations](Hypotrochoid/HypotrochoidEquations.PNG)
 
 This is what it produces (the circle was added for context):
 
-![Hypotrochoid](Hypotrochoid.PNG)
+![Hypotrochoid](Hypotrochoid/Hypotrochoid.PNG)
