@@ -1,12 +1,14 @@
-var t = 0;
-var a = 1;
-var b = 3;
-var k_x = 3;
-var k_y = 2;
+var t = 0;  // Parameter, t
+var a = 1;  // Ratio of a to b
+var b = 2;  // Ratio of a to b
+var d = ((b - a) / b) * (Math.PI / 2);  // Delta term
+var k_x = 3;  // Constant of x
+var k_y = 2;  // Constant of y
+var scalePixels = 100; // Scale by pixels
 
 function setup() {
-  createCanvas(600, 400);
-  background(20);
+  createCanvas(800, 600);
+  background(200);
 }
 
 function draw() {
@@ -18,9 +20,9 @@ function draw() {
 }
 
 function x(t) {
-  return a * cos(k_x * t);
+  return a * sin(k_x * t) * scalePixels;
 }
 
 function y(t) {
-  return b * cos(k_y * t);
+  return b * sin(k_y * t) * scalePixels;
 }
