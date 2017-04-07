@@ -7,7 +7,7 @@ var k_y = 2;  // Constant of y
 var scalePixels = 100; // Scale by pixels
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(800, 800);
   background(200);
 }
 
@@ -20,7 +20,7 @@ function draw() {
 }
 
 function x(t) {
-  return a * sin(k_x * t) * scalePixels;
+  return a * cos(k_x * t) * scalePixels;
 }
 
 function y(t) {
