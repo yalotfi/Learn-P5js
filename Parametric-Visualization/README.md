@@ -12,3 +12,11 @@ This is the set of equations that describe the curve:
 This is what it produces (the circle was added for context):
 
 ![Hypotrochoid](Hypotrochoid/Hypotrochoid.PNG)
+
+## Lissajous Plots
+
+Another harmonic graph describes by a set of parametric equations.
+
+![Lissajous1](Lissajous/LissajousClassic.PNG)
+
+![Lissajous2](Lissajous/LissajousSquare.PNG)

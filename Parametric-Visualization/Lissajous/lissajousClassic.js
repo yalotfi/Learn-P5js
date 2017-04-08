@@ -7,8 +7,8 @@ var k_y = 2;  // Constant of y
 var scalePixels = 100; // Scale by pixels
 
 function setup() {
-  createCanvas(800, 800);
-  background(200);
+  createCanvas(600, 600);
+  background(20);
 }
 
 function draw() {

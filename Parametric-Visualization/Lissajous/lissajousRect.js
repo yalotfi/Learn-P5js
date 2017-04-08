@@ -20,4 +20,4 @@ function x(t) {
 
 function y(t) {
   return cos(2 * t / 20) * scalePixels;
-}
+} 
